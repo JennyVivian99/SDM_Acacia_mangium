@@ -4,4 +4,4 @@ This repository contains the code and the occurrence data used to model the spat
 - future climatic conditions as modelled by BCC-CSM2-MR for the SSP +5-8.5 W/m² scenario between 2061 and 2080
 - future climatic conditions as modelled by BCC-CSM2-MR for the SSP +5-8.5 W/m² scenario between 2081-2100
 
-Climate variables were downloaded from (WorldClim)[https://www.worldclim.org/].
+Climate variables were downloaded from [WorldClim](https://www.worldclim.org/).
