@@ -1,11 +1,11 @@
 # MaxEnt correlation variables
 ####Install required packages####
-install.packages("ENMeval")
-install.packages("dismo")
-install.packages("raster")
-install.packages("sp")
-install.packages("ecospat")
-install.packages("terra")
+#install.packages("ENMeval")
+#install.packages("dismo")
+#install.packages("raster")
+#install.packages("sp")
+#install.packages("ecospat")
+#install.packages("terra")
 
 # Space allocation for big raster data
 options(java.parameters = "-Xmx10g")
@@ -22,7 +22,7 @@ library(ggplot2)
 ####Environment preparation####
 # Define the directory where the layer files are stored
 # In this folder is located also MaxEnt
-climate_data_dir <- "C:/Users/j_v072/OneDrive - University of the Sunshine Coast (1)/Dottorato cose/PhD/R_Analyses/maxent"
+climate_data_dir <- "NAME OF YOUR DIRECTORY"
 # List all files in the directory
 all_files <- list.files(climate_data_dir)
 print(all_files)
@@ -46,7 +46,7 @@ print(climate_layers)
 layer_values <- extract(climate_layers, 1:ncell(climate_layers))
 # Compute the correlation matrix between layers
 cor_matrix <- cor(layer_values, use = "pairwise.complete.obs")
-# Store the resolt in the working directory
+# Store the result in the working directory
 #write.csv(cor_matrix, "environmental_corr.csv", row.names = T)
 # Display the correlation matrix
 print(cor_matrix)
