@@ -22,7 +22,7 @@ library(ggplot2)
 ####Environment preparation####
 # Define the directory where the layer files are stored
 # In this folder is located also MaxEnt
-climate_data_dir <- "C:/Users/j_v072/OneDrive - University of the Sunshine Coast (1)/Dottorato cose/PhD/R_Analyses/maxent/Projection_2081_2100_22p585"
+climate_data_dir <- "C:/Users/jenny/Desktop/maxent41_60"
 
 # List all files in the directory
 all_files <- list.files(climate_data_dir)
@@ -95,14 +95,29 @@ eval_results <- ENMevaluate(
 res <- eval.results(eval_results)
 model_evaluation<-eval.models(eval_results)
 
-# Visualise
+# Visualize
 res
 model_evaluation
-plot(eval_results@predictions, background= "black")
-pdf(eval_results@predictions)
-savePlot("Prediction_2041_2060",type="pdf")
-dev.off()
+plot(eval_results@predictions,  background="black")
+
+# View the results table
+results_df <- eval_results@results
+results_df
 
 # View the results table
 print(eval_results@results)
 
+
+# Access a specific model (e.g., the first one)
+model_1 <- eval_results@models[[1]]
+
+# Access a specific prediction raster
+pred_raster_1 <- eval_results@predictions[[1]]
+
+# Visualize
+plot(pred_raster_1,
+     background = "black")
+
+# Plotting evaluation metrics (ENMeval provides helper functions)
+#ENMeval::eval.plot(eval_results@results)
+#ENMeval::eval.plot.overlap(eval_results@results) # For niche overlap metrics
