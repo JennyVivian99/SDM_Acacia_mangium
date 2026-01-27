@@ -100,7 +100,7 @@ res
 model_evaluation
 plot(eval_results@predictions, background= "black")
 pdf(eval_results@predictions)
-savePlot("Predictio_2081_2100",type="pdf")
+savePlot("Prediction_2081_2100",type="pdf")
 dev.off()
 
 # View the results table
