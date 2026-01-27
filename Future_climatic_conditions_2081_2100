@@ -1,11 +1,11 @@
 # MaxEnt correlation variables
 ####Install required packages####
-install.packages("ENMeval")
-install.packages("dismo")
-install.packages("raster")
-install.packages("sp")
-install.packages("ecospat")
-install.packages("terra")
+#install.packages("ENMeval")
+#install.packages("dismo")
+#install.packages("raster")
+#install.packages("sp")
+#install.packages("ecospat")
+#install.packages("terra")
 
 # Space allocation for big raster data
 options(java.parameters = "-Xmx10g")
@@ -21,8 +21,8 @@ library(ggplot2)
 
 ####Environment preparation####
 # Define the directory where the layer files are stored
-# In this folder is located also MaxEnt
-climate_data_dir <- "C:/Users/j_v072/OneDrive - University of the Sunshine Coast (1)/Dottorato cose/PhD/R_Analyses/maxent/Projection_2081_2100_22p585"
+# In this folder is located also MaxEnt. Better if folder in local, not in OneDrive or similar
+climate_data_dir <- "YOUR DIRECTORY"
 
 # List all files in the directory
 all_files <- list.files(climate_data_dir)
@@ -95,14 +95,11 @@ eval_results <- ENMevaluate(
 res <- eval.results(eval_results)
 model_evaluation<-eval.models(eval_results)
 
-# Visualise
+# Visualize
 res
 model_evaluation
-plot(eval_results@predictions, background= "black")
-pdf(eval_results@predictions)
-savePlot("Predictio_2081_2100",type="pdf")
-dev.off()
+plot(eval_results@predictions,  background="black")
 
 # View the results table
-print(eval_results@results)
-
+results_df <- eval_results@results
+results_df
