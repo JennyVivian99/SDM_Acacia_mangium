@@ -23,7 +23,7 @@ library(spThin)
 ####Environment preparation####
 # Define the directory where the layer files are stored
 # In this folder is located also MaxEnt
-climate_data_dir <- "C:/Users/jenny/Desktop/MaxEnt/Projection_2041_2060_ssp585"
+climate_data_dir <- "YOUR DIRECTORY"
 
 # List all files in the directory
 all_files <- list.files(climate_data_dir)
